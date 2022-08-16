@@ -6,14 +6,15 @@ import PostRouter from './routes/posts.js';
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/mern_mastery', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/mern_mastery', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.once('open', () => console.log(`DATABASE CONNECTED`));
 
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
+app.use(bodyParser.json({ limit: '30mb', extended: true }));
 
 app.use('/', PostRouter);
 

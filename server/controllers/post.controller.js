@@ -10,7 +10,14 @@ export const getPosts = async (req, res) => {
 }
 
 export const createPost = async (req, res) => {
-    const newPost = new postModel(req.body);
+    const newPost = new postModel({
+        title: req.body.title,
+        message: req.body.message,
+        creator: req.body.creator,
+        tags: req.body.tags,
+        selectedFile: req.body.selectedFile,
+        likeCount: req.body.likeCount,
+    });
     try {
         await newPost.save();
         res.status(201).json({message: 'post saved'});

@@ -16,7 +16,7 @@ export const createPost = async (req, res) => {
         creator: req.body.creator,
         tags: req.body.tags,
         selectedFile: req.body.selectedFile,
-        likeCount: req.body.likeCount,
+        likeCount: req.body.likeCount
     });
     try {
         await newPost.save();

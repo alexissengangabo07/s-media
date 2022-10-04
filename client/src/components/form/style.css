@@ -1,0 +1,15 @@
+.form-container {
+    width: 100%;
+}
+.form-input {
+    height: 30px;
+    width: 100%;
+}
+
+.form-group {
+    margin-top: 5px;
+}
+
+.form-textarea {
+    width: 100%;
+}

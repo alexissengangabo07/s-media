@@ -4,7 +4,7 @@ const postReducer = (posts = [] ,  action) => {
     case "GET_ALL_POSTS":
       return posts;
     case "CREATE_POST":
-      return posts;
+      return [...posts, action.payload];
     default:
       return posts;
     break;

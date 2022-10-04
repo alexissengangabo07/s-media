@@ -6,11 +6,11 @@
 }
 
 .posts {
-  flex-basis: 70%;
+  flex-basis: 60%;
 }
 
 form {
-  flex-basis: 30px;
+  flex-basis: 40px;
 }
 
 .header {

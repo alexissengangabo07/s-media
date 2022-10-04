@@ -23,6 +23,7 @@ const App = () => {
               alt="App Icon"
               className="app-icon"
               height={60}
+              style={{borderRadius: 60}}
             />
           </div>
           <div>

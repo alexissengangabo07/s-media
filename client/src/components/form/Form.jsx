@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { createPostAction } from '../../actions/postAction';
 
 const Form = () => {
-  const [postData, setPostData] = useState({ creator: 'alex', title: 'ok', message: 'oklm', tags: '', selectedFile: '' });
+  const [postData, setPostData] = useState({ creator: 'alex', title: 'ok', message: 'oklm', tags: '', postImage: '' });
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -15,7 +15,7 @@ const Form = () => {
   }
 
   const clear = () => {
-
+    setPostData({ creator: '', title: '', message: '', tags: '', postImage: '' });
   }
 
   return (
@@ -32,17 +32,17 @@ const Form = () => {
         </div>
         <div className='form-group'>
           <label>Message</label>
-          <textarea name="message" className='form-textarea' rows="10" placeholder='Message' onChange={(e) => setPostData({ ...postData, message: e.target.value })} defaultValue={postData.message}></textarea>
+          <textarea name="message" className='form-textarea' rows="10" placeholder='Message' onChange={(e) => setPostData({ ...postData, message: e.target.value })} value={postData.message}></textarea>
         </div>
         <div className='form-group'>
           <input type="text" name="tags" className="form-input" placeholder="Tags (coma separated)" value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
         </div>
         <div className="file-container form-group">
-          <input type="file" value={postData.selectedFile} onChange={(e) => {setPostData({ ...postData, selectedFile: e.target.value })}} />
+          <input type="file" value={postData.selectedFile} onChange={(e) => setPostData({ ...postData, postImage: e.target.value })} />
         </div>
         <div className='form-group'>
           <button className="btn-sumit-post" type="submit">Submit</button>
-          <button type="reset">Clear</button>
+          <button onClick={clear}>Clear</button>
         </div>
       </form>
     </div>

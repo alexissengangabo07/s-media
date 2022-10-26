@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Posts from "./components/posts/Posts";
 import Form from "./components/form/Form";
 import AppIcon from "./images/social-media.jpg";
@@ -8,6 +8,7 @@ import { postAction } from "./actions/postAction";
 
 const App = () => {
   const dispatch = useDispatch();
+  const [currentId, setCurrentId] =useState(null);
 
   useEffect(() => {
     dispatch(postAction());
@@ -33,10 +34,10 @@ const App = () => {
       </div>
       <div className="main">
         <div className="posts">
-          <Posts />
+          <Posts setCurrentId={setCurrentId} />
         </div>
         <div className="form">
-          <Form />
+          <Form currentId={currentId} setCurrentId={setCurrentId} />
         </div>
       </div>
     </div>

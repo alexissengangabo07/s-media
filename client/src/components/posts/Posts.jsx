@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const Posts = () => {
   const posts = useSelector((state) => state.postReducer);
 
-  console.log(posts)
+  console.log(posts);
   return (
     <div className='post-container'>
      {posts.map(post => (

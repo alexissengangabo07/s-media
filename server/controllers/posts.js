@@ -22,3 +22,10 @@ export const createPost = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
+
+export const updatePost = async (req, res) => {
+    const { id } = req.params;
+    const post = req.body;
+
+    const updatedPost = await findOneAndUpdate(id, post, { new: true });
+}

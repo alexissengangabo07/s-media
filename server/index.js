@@ -6,7 +6,7 @@ import cors from 'cors';
 import postRoutes from "./routes/posts.js";
 
 const app = express();
-
+//Middlewares
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());

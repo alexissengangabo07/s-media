@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { createPostAction } from '../../actions/postAction';
 
 const Form = () => {
-  const [postData, setPostData] = useState({ creator: 'alex', title: 'ok', message: 'oklm', tags: '', postImage: '' });
+  const [postData, setPostData] = useState({ creator: 'alexis', title: 'ok', message: 'oklm', tags: '', postImage: '' });
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
